@@ -1,0 +1,207 @@
+Meeting ID: 839 9663 9153
+Passcode: 7iRAQ2
+
+https://meet.google.com/rrs-jdxq-nta
+
+class ABCD
+{
+int a,b;
+}
+
+Spring 1.0
+~~~~~~~~~~~~~
+config1.xml
+
+<beans
+<bean id="bean1", name="*.ABCD">
+<property name="a" value="23"/>
+<property name="b" value="33"/>
+</bean>
+<bean id="bean2", name="*.ABC">
+<property name="a" value="23"/>
+<property name="b" value="33"/>
+</bean>
+</beans>
+
+ApplicationContext ac = new ClassPathXmlApplicationContext("config1.xml","config2.xml");
+
+ABCD a1 = ac.getBean("bean1);
+ABC a11 = ac.getBean("bean2);
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+config2.xml
+
+<import resource ="config1.xml"/>
+
+
+<beans
+<bean id="bean3", name="*.ABCD">
+<property name="a" value="23"/>
+<property name="b" value="33"/>
+</bean>
+<bean id="bean4", name="*.ABC">
+<property name="a" value="23"/>
+<property name="b" value="33"/>
+</bean>
+</beans>
+
+ApplicationContext ac = new ClassPathXmlApplicationContext("config2.xml");
+
+Spring 2.0 
+
+Autowiring - @Autowired - this annotation will be placed above the fields
+<context:annotation-config" />
+
+<beans
+<bean id="bean1", name="*.ABCD"/> + Autowiring
+<bean id="bean1", name="*.ABC"/>
+<bean id="bean1", name="*.AB"/>
+
+</beans>
+
+component scan - @Component, @Controller, @Repository, @Service
+- this annotation will be placed above the class
+
+@Component/@Controller/@Repository/@Service
+class ABCD{}
+
+<context:component-scan
+  base-package="package name," />
+
+Spring 3.0
+
+ConfigClass1.java file
+
+
+class ABCD{}
+
+
+@Configuration//<beans
+@ImportResource(ConfigClass2.class)
+public class ConfigClass1{
+   @Bean //<bean id ="" class=""
+   public HelloWorld helloWorld(){
+      return new HelloWorld();
+   }
+@Bean //<bean id ="" class=""
+   public ABCD getABCD(){
+      return new ABCD();
+   }
+}
+
+ ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+
+Bean ->Bean Container 
+
+
+<bean id="bean1", name="*.ABCD">
+<bean id="bean2", name="*.ABCD">
+
+ABCD a1 = ac.getBean("bean1");
+ABCD a2 = ac.getBean("bean1");
+ABCD a3 = ac.getBean("bean1");
+
+<bean id="bean1", name="*.ABCD" scope="prototype">
+<bean id="bean1", name="*.ABCD" scope="request">
+<bean id="bean1", name="*.ABCD" scope="session">
+<bean id="bean1", name="*.ABCD" scope="application">
+
+Bean scopes
+Singleton
+Prototype
+request
+session
+application
+websocket
+
+
+init()
+destroy()
+
+
+when and how it is created?
+How it behaves?
+when and how it is destroyed?
+
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class Application {
+
+    public static void main(String[] args) {
+        closeManually();
+//        closeAutomatically();
+//        closeAsCloseable();
+    }
+
+    private static void closeManually() {
+        ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+          Application.class);
+
+        // Additional logic...
+
+        applicationContext.close();
+    }
+
+    private static void closeAutomatically() {
+        ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+          Application.class);
+        applicationContext.registerShutdownHook();
+
+        // Additional logic...
+    }
+
+    private static void closeAsCloseable() {
+        try (ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+          Application.class)) {
+            // Additional logic...
+        }
+    }
+}
+
+
+
+Spring  Spring Framework
+Spring core , Spring 
+
+
+Spring
+IoC
+DI
+BeanFactory
+ApplicationContext
+Bean
+xml file
+Java file
+Annotation
+container
+Bean definitions
+Bean scope - singleton, prototype, applictaion, request, session, webSocket
+
+Autowiring - @Autowired -<context:annotation-config>
+component scan - @Component, @COntroller, @Repository, @Service
+<context:component-scan base-package=""/>
+
+ApplicationContext ac = new ClassPathXmlApplicationContext
+
+@Configuration
+@Bean
+ApplicationContext ac = new AnnotationConfigApplicationContext
+combine resources -xml , java 
+
+
+bean life cycle - init, destroy
+
+
+container - close,
+registerShutDownHook
+try()
+
+Projects in Spring
+
+AOP
+SpEL
+
+

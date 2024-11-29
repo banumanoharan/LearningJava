@@ -1,0 +1,247 @@
+Design pattern
+ What is about design pattern
+ SDLC (5 phases- 1st phase , requirements gathering and analysing)
+ Characteristics - Reusability, Flexibility, improve system performance
+
+Types
+ Software design pattern
+ J2EE design pattern
+ Spring design pattern
+
+Software Design Patterns
+1. Creational - Focus on object creation
+2. Structural - Structuring /Assembling the classes
+3. Behavioral - Responsibities of object, communication between objects, Manage the control flow
+
+
+Creational
+ Factory Method
+Abstract Factory
+ Singleton Method
+ Prototype Method
+  Builder Method
+
+ Factory Method
+	How to separate the construction of objects and implementation
+	A class can't anticipate the class of objects to be created
+ 	A class wants to specify its subclass, to specify the object it creates
+	A class to delegate its responsibility to its sucb classes
+
+
+ Abstract Factory
+	Another layer of abstraction over factory pattern
+	A system should be independent of how its products are created,configured  and communicated
+
+	
+ Singleton Method
+	Simplest design pattern
+	Ensures that the class has only one instance
+
+ Prototype Method
+	creating many objects 
+ 	copy an existing object, reduces cost oprations
+
+ Builder Method
+	Helps in constructing the complex object step by step and return the object
+
+
+Structural
+
+Adapter Method design pattern
+Bridge method design pattern
+Composite method design pattern
+Decorator method design pattern
+Facade method design patterns
+Flyweight method design pattern
+Proxy method design pattern
+
+
+Adapter Method design pattern
+	- Wrapper
+	- convert the interface of a class to another interface , which clients expect
+
+Bridge method design pattern
+	Separate an object's implementation and its abstrcation
+what an object is going to do and how its going to do it
+
+
+Composite method design pattern
+	compose the objects into trees structures
+
+Decorator method design pattern
+	Adding additional features without changing the base structure
+	Whenever you want the objects to change the responsibilities dynamically  and transparently, without affecting the other objeccts
+
+
+Facade method design patterns
+ Provide a unified interface to a set of interfaces in a subsystem
+ Define a higher-level, that makes the subsytem easier
+
+Flyweight method design pattern	
+	Helps reduce the memory usage ,by sharing the common parts of object, instead of creating new instances
+
+Proxy method design pattern
+
+	- Surrogate
+	- gives the placeholder for another object
+
+
+Behavioral
+ Communication between objects
+ Collaboration of objects
+
+Chain Of Responsibility Method Design Pattern
+Command method design pattern
+Interpreter method design pattern
+Mediator method design pattern
+Memento method design pattern
+Observer method design pattern
+State method design pattern
+Strategy method  design pattern
+Template method design pattern
+Visitor method design pattern
+
+
+Chain Of Responsibility Method Design Pattern
+ - allows the object to pass it to a chain of hanlers
+ - Obejcts to be communicated in complex or in a chain mode
+
+Command method design pattern
+	Turns the request into a stand-alone object
+
+
+Interpreter method design pattern
+	provide a way to intrepret and evaluate the expresions and grammar
+
+Mediator method design pattern
+	Defines an object , which encapsulates a set of objects
+
+Memento method design pattern
+	used to capture and restore the object's internal state
+
+Observer method design pattern
+	one - to - many relationship between objects
+	when one object changes the state, all it dependents will be notified and changed accordingly
+
+
+State method design pattern
+	Alter the internal state of an object
+
+
+Strategy method  design pattern
+	Policy
+	Defines algorithm, encapsulate and make them interchangeable
+
+Template method design pattern
+	define a skeleton of an algorithm of any operation
+
+Visitor method design pattern
+	Allow you to add new operations to a group of related classes, without modifying the structure
+
+
+J2EE Design Patterns
+Key design patterns
+
+MVC
+DAO
+Factory method
+Singleton 
+Session Facade
+Front Controller
+Dependency Injection
+
+Enterprise Appplication 
+
+Layered Architecture
+SOA (Services Oriented Architecture)
+Microservices architecture
+DDD - Domain -Driven Design
+EDA - Event-Driven Architecture
+CQRS - Command Query Responsibility Segregation
+Saga pattern
+Bulkhead pattern
+
+Spring Design Patterns
+
+DI
+Singleton
+Factory Method
+Proxy pattern
+Template pattern
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What? When? Which
+
+Types
+ Software design pattern
+ J2EE design pattern
+ Spring design pattern
+
+Software Design Patterns
+1. Creational - Focus on object creation
+2. Structural - Structuring /Assembling the classes
+3. Behavioral - Responsibities of object, communication between objects, Manage the control flow
+
+
+Creational
+ Factory Method
+Abstract Factory
+ Singleton Method
+ Prototype Method
+  Builder Method
+
+
+Structural
+
+Adapter Method design pattern
+Bridge method design pattern
+Composite method design pattern
+Decorator method design pattern
+Facade method design patterns
+Flyweight method design pattern
+Proxy method design pattern
+
+
+Behavioral
+
+Chain Of Responsibility Method Design Pattern
+Command method design pattern
+Interpreter method design pattern
+Mediator method design pattern
+Memento method design pattern
+Observer method design pattern
+State method design pattern
+Strategy method  design pattern
+Template method design pattern
+Visitor method design pattern
+
+J2EE Design Patterns
+Key design patterns
+
+MVC
+DAO
+Factory method
+Singleton 
+Session Facade
+Front Controller
+Dependency Injection
+
+Enterprise Appplication 
+
+Layered Architecture
+SOA (Services Oriented Architecture)
+Microservices architecture
+DDD - Domain -Driven Design
+EDA - Event-Driven Architecture
+CQRS - Command Query Responsibility Segregation
+Saga pattern
+Bulkhead pattern
+
+Spring Design Patterns
+
+DI
+Singleton
+Factory Method
+Proxy pattern
+Template pattern

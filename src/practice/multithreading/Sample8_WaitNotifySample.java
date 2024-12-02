@@ -33,7 +33,7 @@ class Processor {
 
 }
 
-public class WaitNotifySample {
+public class Sample8_WaitNotifySample {
 
     public static void main(String[] args) {
         Processor processor = new Processor();

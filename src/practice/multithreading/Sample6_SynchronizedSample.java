@@ -1,6 +1,6 @@
 package practice.multithreading;
 
-public class SynchronizedSample {
+public class Sample6_SynchronizedSample {
     public static void main(String[] args) {
         MTable mt = new MTable();
         Thread t1 = new Thread(){

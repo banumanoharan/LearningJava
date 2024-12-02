@@ -1,6 +1,6 @@
 package practice.multithreading;
 
-public class SynchronizedTestClass {
+public class Sample7_SynchronizedTestClass {
     public static void main(String[] args) {
         MultiplicationTable mt = new MultiplicationTable();
         Thread t1 = new Thread(){

@@ -1,6 +1,6 @@
 package practice.multithreading;
 
-public class IsALiveSample {
+public class Sample4_IsALiveSample {
     public static void main(String[] args) {
         ABR abr = new ABR();
         if(abr.isAlive())

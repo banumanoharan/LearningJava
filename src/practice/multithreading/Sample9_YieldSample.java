@@ -1,6 +1,6 @@
 package practice.multithreading;
 
-public class YieldSample {
+public class Sample9_YieldSample {
     public static void main(String[] args) {
         MDE md = new MDE();
         new Thread(md).start();

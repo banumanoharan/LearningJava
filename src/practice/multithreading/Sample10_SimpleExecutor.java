@@ -3,7 +3,7 @@ package practice.multithreading;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SimpleExecutor {
+public class Sample10_SimpleExecutor {
     public static void main(String[] args) {
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);

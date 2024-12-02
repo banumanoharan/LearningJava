@@ -1,6 +1,6 @@
 package practice.multithreading;
 
-public class InterruptMethodSample {
+public class Sample3_InterruptMethodSample {
     public static void main(String[] args) {
         ABRSP ab = new ABRSP();
         ab.start();

@@ -1,0 +1,163 @@
+Spring Boot Java Application
+
+@SpringBootApplication
+public class FirstspringbootdemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FirstspringbootdemoApplication.class, args);
+		System.out.println("Hi! Am from Spring Boot Application!");
+	}
+
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring Boot Web Application
+
+
+@RestController
+@EnableAutoConfiguration
+public class FirstspringbootmvcdemoApplication {
+	
+
+    @GetMapping("/")
+    String home() {
+        return "Hello World!";
+    }
+
+
+	public static void main(String[] args) {
+		SpringApplication.run(FirstspringbootmvcdemoApplication.class, args);
+	}
+
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Spring Data JPA + Spring Web 
+
+Friends.java
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="Friends")
+public class Friends {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private String name;
+	private String address;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+
+}
+
+********************
+FriendsController.java
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
+@RestController
+public class FriendsController {
+	
+	@Autowired
+    private FriendsService service;
+
+	
+	
+	  @GetMapping("/friends")
+	    public List<Friends> findAllProducts() {
+	        return service.getFriends();
+	    }
+
+	    @GetMapping("/friendById/{id}")
+	    public Friends findFriendById(@PathVariable int id) {
+	        return service.getFriendById(id);}
+
+	    @GetMapping("/friend/{name}")
+	    public Friends findFriendByName(@PathVariable String name) {
+	        return service.getFriendByName(name);
+	    }
+}
+
+*************************
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface FriendsInterface extends JpaRepository<Friends,Integer> {
+    Friends findByName(String name);
+    
+   
+}
+********************************
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+@Service
+public class FriendsService {
+    @Autowired
+    private FriendsInterface repository;
+
+    public List<Friends> getFriends() {
+    return repository.findAll();
+}
+
+    public Friends getFriendById(int id) {
+    return repository.findById(id).orElse(null);
+}
+
+    public Friends getFriendByName(String name) {
+    return repository.findByName(name);
+}
+}
+
+***************************
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SecondspringbootdatajpademoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SecondspringbootdatajpademoApplication.class, args);
+	}
+
+}
+
+
